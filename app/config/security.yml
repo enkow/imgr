@@ -1,0 +1,61 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    providers:
+        user:
+            id: app.user_provider
+
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        admin:
+            pattern: ^/admin.*$
+            anonymous: ~
+            provider: user
+            simple_form:
+                authenticator: app.admin_authenticator
+                login_path: admin_auth_login
+                check_path: admin_auth_login_check
+                default_target_path: admin
+                username_parameter: login[username]
+                password_parameter: login[password]
+            logout:
+                path: admin_auth_logout
+                target: admin_auth_login
+            context: app
+
+        user:
+            pattern: ^/.*$
+            anonymous: ~
+            provider: user
+            simple_form:
+                authenticator: app.user_authenticator
+                login_path: auth_login
+                check_path: auth_login_check
+                default_target_path: /
+                username_parameter: login[username]
+                password_parameter: login[password]
+            logout:
+                path: auth_logout
+                target: auth_login
+            context: app
+
+    access_control:
+      - { path: ^/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/reset, role: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/admin/reset, role: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/test, role: ROLE_USER }
+      - { path: ^/$, role: ROLE_USER }
+      - { path: ^/admin, role: ROLE_ADMIN }
