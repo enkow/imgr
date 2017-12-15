@@ -8,18 +8,14 @@
 				<i class="fa fa-angle-left pull-right"></i>
 			</a>
 			<ul class="treeview-menu">
-				<li> <a href="">{{ 'navbar.searcher'|trans }}</a> </li>
-				<li> <a href="">{{ 'navbar.not-approved'|trans }}</a> </li>
+				<li> <a href="{{ url('admin_user_index') }}">{{ 'navbar.searcher'|trans }}</a> </li>
+				<li> <a href="{{ url('admin_user_not_approved') }}">{{ 'navbar.not-approved'|trans }}</a> </li>
 			</ul>
 		</li>
 
-    <li class="header">{{ 'navbar.presences'|trans }}</li>
+    <li class="header">{{ 'navbar.form'|trans }}</li>
 
-    <li><a href=""><i class="fa fa-calendar"></i> <span>{{ 'navbar.presence'|trans }}</span></a></li>
-
-    <li class="header">{{ 'navbar.tests'|trans }}</li>
-    <li><a href=""><i class="fa fa-question-circle"></i> <span>{{ 'navbar.question'|trans }}</span></a></li>
-    <li><a href=""><i class="fa fa-file-text"></i> <span>{{ 'navbar.test'|trans }}</span></a></li>
+    <li><a href="{{ url('admin_question_index') }}"><i class="fa fa-calendar"></i> <span>{{ 'navbar.questions'|trans }}</span></a></li>
 
     <li><a href=""><i class="fa fa-sign-out "></i> <span>{{ 'navbar.logout'|trans }}</span></a></li>
 

@@ -43,28 +43,28 @@ class QuestionType extends AbstractType
                 'required' => true,
             ]
         );
-        $builder->add(
-            'type',
-            ChoiceType::class,
-            [
-                'label' => 'form.question.answer',
-                'required' => true,
-                'choices'  => [
-                    'choice.one_correct' => 1,
-                    'choice.many_correct' => 2,
-                    'choice.regex' => 3,
-                ],
-                'choices_as_values' => true,
-            ]
-        );
-        $builder->add(
-            'answer',
-            TextType::class,
-            [
-                'label' => 'form.question.answer',
-                'required' => true,
-            ]
-        );
+        // $builder->add(
+        //     'type',
+        //     ChoiceType::class,
+        //     [
+        //         'label' => 'form.question.answer',
+        //         'required' => true,
+        //         'choices'  => [
+        //             'choice.one_correct' => 1,
+        //             'choice.many_correct' => 2,
+        //             'choice.regex' => 3,
+        //         ],
+        //         'choices_as_values' => true,
+        //     ]
+        // );
+        // $builder->add(
+        //     'answer',
+        //     TextType::class,
+        //     [
+        //         'label' => 'form.question.answer',
+        //         'required' => true,
+        //     ]
+        // );
     }
 
     /**

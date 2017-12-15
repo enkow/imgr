@@ -77,58 +77,58 @@ class Question
      */
     protected $content;
 
-    /**
-     * Type.
-     *
-     * @var integer $type
-     *
-     * @ORM\Column(
-     *     name="answer_type",
-     *     type="integer",
-     *     nullable=false,
-     * )
-     * @Assert\NotBlank(
-     *     groups={"question-default"}
-     * )
-     */
-    protected $type;
+    // /**
+    //  * Type.
+    //  *
+    //  * @var integer $type
+    //  *
+    //  * @ORM\Column(
+    //  *     name="answer_type",
+    //  *     type="integer",
+    //  *     nullable=false,
+    //  * )
+    //  * @Assert\NotBlank(
+    //  *     groups={"question-default"}
+    //  * )
+    //  */
+    // protected $type;
 
-    /**
-     * Answer.
-     *
-     * @var string $answer
-     *
-     * @ORM\Column(
-     *     name="answer",
-     *     type="string",
-     *     nullable=false,
-     * )
-     * @Assert\NotBlank(
-     *     groups={"question-default"}
-     * )
-     */
-    protected $answer;
+    // /**
+    //  * Answer.
+    //  *
+    //  * @var string $answer
+    //  *
+    //  * @ORM\Column(
+    //  *     name="answer",
+    //  *     type="string",
+    //  *     nullable=false,
+    //  * )
+    //  * @Assert\NotBlank(
+    //  *     groups={"question-default"}
+    //  * )
+    //  */
+    // protected $answer;
 
-    /**
-     * Points.
-     *
-     * @var integer $points
-     *
-     * @ORM\Column(
-     *     name="points",
-     *     type="integer",
-     *     nullable=false,
-     * )
-     * @Assert\NotBlank(
-     *     groups={"question-default"}
-     * )
-     * @Assert\Range(
-     *     groups={"question-default"},
-     *     min = 1,
-     *     max = 100,
-     * )
-     */
-    protected $points;
+    // /**
+    //  * Points.
+    //  *
+    //  * @var integer $points
+    //  *
+    //  * @ORM\Column(
+    //  *     name="points",
+    //  *     type="integer",
+    //  *     nullable=false,
+    //  * )
+    //  * @Assert\NotBlank(
+    //  *     groups={"question-default"}
+    //  * )
+    //  * @Assert\Range(
+    //  *     groups={"question-default"},
+    //  *     min = 1,
+    //  *     max = 100,
+    //  * )
+    //  */
+    // protected $points;
 
     /**
      * Get id

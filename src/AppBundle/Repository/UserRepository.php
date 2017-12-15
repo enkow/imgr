@@ -184,7 +184,6 @@ class UserRepository extends EntityRepository
             FROM AppBundle:User u
             WHERE (u.username LIKE :q
             OR u.email LIKE :q)
-            AND u.group IS NOT NULL
         ')->setParameter('q', $string)
         ->getResult();
     }

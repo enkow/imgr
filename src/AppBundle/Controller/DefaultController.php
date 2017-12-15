@@ -5,7 +5,6 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
@@ -19,18 +18,22 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
+     * Template prefix
+     *
+     * @var $prefix
+     */
+    protected $prefix = 'default';
+
+    /**
      * Index action.
      *
-     * @Route("/hello/{name}")
+     * @Route("/")
      *
      * @param string $name Name
      * @return Response A Response instance
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render(
-            'default/index.html.twig',
-            ['name' => $name]
-        );
+        return $this->view('index');
     }
 }

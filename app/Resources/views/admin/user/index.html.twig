@@ -1,7 +1,7 @@
 {% extends 'admin/template/page.html.twig' %}
 {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
 
-{% block title %}<i class="fa fa-graduation-cap"></i> {{ 'title.year'|trans }}{% endblock %}
+{% block title %}<i class="fa fa-graduation-cap"></i> {{ 'title.users'|trans }}{% endblock %}
 
 {% block body %}
     <div class="col-sm-offset-2 col-sm-8">
@@ -29,8 +29,6 @@
                 <th class="id">#</th>
                 <th>{{ 'table.username'|trans }}</th>
                 <th>{{ 'table.email'|trans }}</th>
-                <th>{{ 'table.year'|trans }}</th>
-                <th>{{ 'table.group'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -39,8 +37,6 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.username }}</td>
                     <td>{{ item.email }}</td>
-                    <td>{{ item.group.year }}</td>
-                    <td>{{ item.group }}</td>
                 </tr>
             {% endfor %}
         </tbody>

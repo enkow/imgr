@@ -9,8 +9,6 @@
                 <th class="id">#</th>
                 <th>{{ 'table.username'|trans }}</th>
                 <th>{{ 'table.email'|trans }}</th>
-                <th>{{ 'table.year'|trans }}</th>
-                <th>{{ 'table.group'|trans }}</th>
                 <th data-orderable="false"></th>
             </tr>
         </thead>
@@ -20,11 +18,8 @@
                     <td>{{ item.id }}</td>
                     <td>{{ item.username }}</td>
                     <td>{{ item.email }}</td>
-                    <td>{{ item.group.year }}</td>
-                    <td>{{ item.group }}</td>
                     <td>
                         <a href="{{ url('admin_user_approve', {'id': item.id}) }}" class="btn btn-info deletable" data-href="{{ url('admin_user_approve', {'id': item.id, 'q': 1}) }}"><i class="fa fa-check"></i> {{ 'button.approve'|trans }}</a>
-                        <a href="{{ url('admin_user_view', {'id': item.id}) }}" class="btn btn-success"><i class="fa fa-search"></i> {{ 'button.view'|trans }}</a>
                         <a href="{{ url('admin_user_edit', {'id': item.id}) }}" class="btn btn-info"><i class="fa fa-pencil"></i> {{ 'button.edit'|trans }}</a>
                         <a href="{{ url('admin_user_delete', {'id': item.id}) }}" class="btn btn-danger deletable" data-href="{{ url('admin_user_delete', {'id': item.id, 'q': 1}) }}"><i class="fa fa-trash"></i> {{ 'button.delete'|trans }}</a>
                     </td>

@@ -52,7 +52,7 @@ class UserController extends Controller
      */
     public function indexAction(Request $request, $page)
     {
-        $users = [];
+        $users = $this->get('app.repository.user')->findAll();
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
 
